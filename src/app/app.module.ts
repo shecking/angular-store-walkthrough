@@ -20,12 +20,13 @@ import { ShippingComponent } from './shipping/shipping.component';
 
 @NgModule({
   imports: [
+    // Listing the imports we need from above
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       // This RouterModule houses all the potential routes for the site, imported from the @angular/router package. This module can be comprised of one or more path/component pairs.
-      // Each of these objects has both a `path` and `component` attribute, which is used to define the absolute path URL and what component the path will load upon navigation.
+      // Each of these objects has both a `path` and `component` attribute, which are used to define the relative URL and what component the path will load upon navigation.
       // For example, the first path is empty (no additional URL material), with ProductListComponent as its component (leading to product-list.product-list.component)
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
@@ -34,6 +35,8 @@ import { ShippingComponent } from './shipping/shipping.component';
     ])
   ],
   declarations: [
+    // After importing, this list defines all the components we will use
+    // These declarations only happens ONCE, and only in this file
     AppComponent,
     TopBarComponent,
     ProductListComponent,

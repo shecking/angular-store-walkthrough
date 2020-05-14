@@ -1,18 +1,15 @@
 <h2>Product Details</h2>
-<!--
-Anything starting with `*ng` is code for creating a structural device in Angular. These devices add, remove, and change the elements they are attached to. `*ng` values will always be contained in quotes, with semicolons separating any attributes.
--->
-<!--
-In this case, *ngIf is used to display a name, price, and description IF a product exists and has these attributes.
--->
-<!--
-Event binding is handled using ( ). In this file, the Buy button has a (click) binding, activating the addToCart(product) method.
--->
+<!--Anything starting with `*ng` is code for creating a structural device in Angular. These devices add, remove, and change the elements they are attached to. `*ng` values will always be contained in quotes, with semicolons separating any attributes.-->
+<!--In this case, *ngIf is used to display a name, price, and description IF a product exists and has these attributes.-->
 <div *ngIf="product">
   <h3>{{ product.name }}</h3>
   <h4>{{ product.price | currency }}</h4>
+  <!--Note: the above line uses Angular 'pipes', a method of HTML transformation. See https://angular.io/guide/pipes for more on their use cases.-->
   <p>{{ product.description }}</p>
   <!-- When users click on a product name, they are directed to a page URL that includes the product id, and displays the above information for that product. This information is swapped out depending on what value `product` has. -->
 
   <button (click)="addToCart(product)">Buy</button>
+  <!--
+  Event binding is handled using ( ). This 'Buy' button has a (click) binding, activating the addToCart(product) method housed in the ProductDetailsComponent (product-details.component.ts).
+  -->
 </div>

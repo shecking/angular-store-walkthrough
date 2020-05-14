@@ -3,6 +3,7 @@
   <a routerLink="/shipping">Shipping Prices</a>
 </p>
 <div class="cart-item" *ngFor="let item of items">
+  <!--This is the cart component template, used to display each item in the cart-->
   <span>{{ item.name }}</span>
   <span>{{ item.price | currency }}</span>
 </div>

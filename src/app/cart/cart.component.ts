@@ -1,6 +1,9 @@
+// This component was originally auto-generated
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms'
 import { CartService } from '../cart.service'
+// Imports from @angular are pulling from the Angular source files
+// The CartService import is the first step in configuring the cart component to be used as an Angular 'service'
 
 @Component({
   selector: 'app-cart',
@@ -10,8 +13,13 @@ import { CartService } from '../cart.service'
 export class CartComponent implements OnInit {
   items;
   checkoutForm;
+  // These are property definitions
+  // `items` is used in cart interaction
+  // `checkoutForm` is used by the constructor to create a form
+  // The methods used by these definitions are created and stored in cart.service.ts
 
   constructor(
+    // Injection of components
     private cartService: CartService,
     private formBuilder: FormBuilder
   ) {

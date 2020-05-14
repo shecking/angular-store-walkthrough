@@ -18,7 +18,7 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     // This constructor is auto-generated
     // It houses 'injected' data with defined classes from the above imported Angular packages
-    // This injection changes a component to be able to use a 'service'
+    // This 'injection' changes a component to be able to use a 'service' (services are explained in cart.service.ts)
     private route: ActivatedRoute,
     // This `ActivatedRoute` contains information about the route for each individual routed component that it will load.
     // It is not found in the .ts file for any other component, since product-details.component.ts is the only one that needs to use the information.
@@ -31,7 +31,7 @@ export class ProductDetailsComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.product = products[+params.get('productId')]
       // `this.product` is originally just `products`
-      // `[+params.get('productId')]` adds the appropriate id
+      // `[+params.get('productId')]` tacks on the appropriate id
     })
   }
 
