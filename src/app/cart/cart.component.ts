@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms'
 import { CartService } from '../cart.service'
 // Imports from @angular are pulling from the Angular source files
 // The CartService import is the first step in configuring the cart component to be used as an Angular 'service'
+// The FormBuilder import (originally provided by ReactiveFormsModule in app.module) will allow us to inject FormBuilder as a service into the constructor
 
 @Component({
   selector: 'app-cart',
@@ -23,6 +24,7 @@ export class CartComponent implements OnInit {
     private cartService: CartService,
     private formBuilder: FormBuilder
   ) {
+    // Using the formBuilder.group method to make a form model, with properties name and address
     this.checkoutForm = this.formBuilder.group({
       name: '',
       address: ''
@@ -36,7 +38,7 @@ export class CartComponent implements OnInit {
   onSubmit(customerData) {
     this.items = this.cartService.clearCart()
     this.checkoutForm.reset()
-
+    // Clearing form fields and resetting form
     console.warn('Your order has been submitted', customerData)
   }
 

@@ -9,11 +9,13 @@
   <span>{{ item.price | currency }}</span>
 </div>
 <form formGroup="checkoutForm" ngSubmit="onSubmit(checkoutForm.value)">
+  <!-- This is the actual form; it uses `ngSubmit` to call the onSubmit method with the current value of the form-->
   <div>
     <label for="name">
       Name
     </label>
     <input id="name" type="text" formControlName="name">
+    <!-- Using the `formControlName` attribute to bind name and address to the input fields -->
   </div>
   <div>
     <label for="address">

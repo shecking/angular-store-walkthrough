@@ -12,28 +12,23 @@ Property binding is handled using [ ]. In this file, [title] creates a title whe
 <!--
 Event binding is handled using ( ). In this file, the Share button has a (click) binding, activating the share() method.
 -->
-<div *ngFor='let product of products; index as productId'>
+<div *ngFor="let product of products; index as productId">
   <h3>
-    <a
-      [title]="product.name + ' details'"
-      [routerLink]="['/products', productId]">
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
       {{ product.name }}
     </a>
   </h3>
   <p *ngIf="product.description">
     Description: {{ product.description }}
   </p>
-  <button (click)="share()">
-    Share
-  </button>
-  <app-product-alerts
+  <button (click)="share()">Share</button>
+  <app-product-alerts [product]="product" (notify)="onNotify()">
     <!--
     See property and event binding above for use of [ ] and ( ).
     -->
     <!--
     (notify)="onNotify()" binds the EventEmitter (product-alerts.component.ts) to the onNotify() method (product-list.component.ts)
     -->
-    [product]="product"
-    (notify)="onNotify()">
+
   </app-product-alerts>
 </div>
