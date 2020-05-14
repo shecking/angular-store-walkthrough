@@ -1,4 +1,5 @@
-// This file is the "hub" for routes, components, and modules used in the app.
+// This file is the "hub" for routes, components, and modules used in the app (imported, declared, etc)
+// Routes are listed in the RouterModule below
 // Components consist of three parts (auto-generated?):
   // 1. The `component` class, handling data (ex. product data in products.ts), functionality via event listeners/handlers (ex. share() method, notify.emit() method, etc).
   // 2. The HTML template, determining the UI (names, descriptions, 'Share' button, etc)
@@ -16,6 +17,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartService } from './cart.service';
 import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
+// This HttpClientModule is included in the @angular package
 import { ShippingComponent } from './shipping/shipping.component';
 
 @NgModule({
@@ -23,6 +25,7 @@ import { ShippingComponent } from './shipping/shipping.component';
     // Listing the imports we need from above
     BrowserModule,
     HttpClientModule,
+      // This registers the HttpClient globally for the app
     ReactiveFormsModule,
     RouterModule.forRoot([
       // This RouterModule houses all the potential routes for the site, imported from the @angular/router package. This module can be comprised of one or more path/component pairs.

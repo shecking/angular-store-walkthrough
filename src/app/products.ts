@@ -3,6 +3,8 @@
 // product-details.component.ts | to list the product details
 // product-list.component.ts | to list the product names
 
+// Mock shipping data is coded in assets/shipping.json
+
 export const products = [
   {
     name: 'Phone XL',
