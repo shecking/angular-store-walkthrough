@@ -1,3 +1,8 @@
+// This file is the "hub" for routes, components, and modules used in the app.
+// Components consist of three parts (auto-generated?):
+  // 1. The `component` class, handling data (ex. product data in products.ts), functionality via event listeners/handlers (ex. share() method, notify.emit() method, etc).
+  // 2. The HTML template, determining the UI (names, descriptions, 'Share' button, etc)
+  // 3. CSS styling specific to the component it's housed in (currently empty)
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -19,6 +24,9 @@ import { ShippingComponent } from './shipping/shipping.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
+      // This RouterModule houses all the potential routes for the site, imported from the @angular/router package. This module can be comprised of one or more path/component pairs.
+      // Each of these objects has both a `path` and `component` attribute, which is used to define the absolute path URL and what component the path will load upon navigation.
+      // For example, the first path is empty (no additional URL material), with ProductListComponent as its component (leading to product-list.product-list.component)
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
@@ -38,7 +46,6 @@ import { ShippingComponent } from './shipping/shipping.component';
   providers: [ CartService ]
 })
 export class AppModule { }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.

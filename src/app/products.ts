@@ -1,3 +1,8 @@
+// This example file represents product data
+// `products` is exported, then imported to the following:
+// product-details.component.ts | to list the product details
+// product-list.component.ts | to list the product names
+
 export const products = [
   {
     name: 'Phone XL',

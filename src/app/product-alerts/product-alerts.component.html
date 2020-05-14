@@ -1,3 +1,14 @@
+<!--
+Anything starting with `*ng` is code for creating a structural device in Angular. These devices add, remove, and change the elements they are attached to.`*ng` values will always be contained in quotes, with semicolons separating any attributes.
+-->
+<!--
+In this case, *ngIf is used to determine the if condition to show the button below. If the price is above 700, the Notify Me button is shown.
+<!--
+Event binding is handled using ( ). In this file, the Notify Me button has a (click) binding, activating the notify.emit() method. When clicked, it will notify a user if the product's price drops below a certain threshold (in this case, $700).
+-->
 <p *ngIf="product.price > 700">
   <button (click)="notify.emit()">Notify Me</button>
+  <!--
+  If clicked, this button will call the notify method defined in this component's .ts file.
+  -->
 </p>

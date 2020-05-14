@@ -1,5 +1,17 @@
 <h2>Products</h2>
-
+<!--
+Anything starting with `*ng` is code for creating a structural device in Angular. These devices add, remove, and change the elements they are attached to. `*ng` values will always be contained in quotes, with semicolons separating any attributes.
+-->
+<!--
+In this case, *ngFor is being used akin to how Handlebars works, iterating through each product and indexing them. *ngIf is being used to display a description ONLY if the product has one (the product has to have a name; no blank fields will be displayed).
+-->
+<!--
+Property binding is handled using [ ]. In this file, [title] creates a title when the mouse is hovered over the link, and [routerLink] defines a path to the product's page.
+  routerLink: This consists of a fixed segment and a variable segment, determined by the product's id.
+-->
+<!--
+Event binding is handled using ( ). In this file, the Share button has a (click) binding, activating the share() method.
+-->
 <div *ngFor='let product of products; index as productId'>
   <h3>
     <a
@@ -15,13 +27,13 @@
     Share
   </button>
   <app-product-alerts
+    <!--
+    See property and event binding above for use of [ ] and ( ).
+    -->
+    <!--
+    (notify)="onNotify()" binds the EventEmitter (product-alerts.component.ts) to the onNotify() method (product-list.component.ts)
+    -->
     [product]="product"
     (notify)="onNotify()">
   </app-product-alerts>
 </div>
-
-<!--
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->
