@@ -29,15 +29,15 @@ export class ProductDetailsComponent implements OnInit {
     // 'Subscribing' and fetching the appropriate route, based on the individual product's id (productId)
     // productId is used in the URL to display the product details
     this.route.paramMap.subscribe(params => {
-      this.product = products[+params.get('productId')]
+      this.product = products[+params.get('productId')];
       // `this.product` is originally just `products`
       // `[+params.get('productId')]` tacks on the appropriate id
-    })
+    });
   }
 
   addToCart(product) {
-    this.cartService.addToCart(product)
-    window.alert('Your product has been added to the cart!')
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
   }
 
 }

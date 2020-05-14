@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 // `Input` will be used to receive `product`
-import { Output, EventEmitter } from '@angular/core'
+import { Output, EventEmitter } from '@angular/core';
 // `Output` will be used to define an action
 // `EventEmitter` will literally be used to emit an event, which will be acted upon in the ProductListComponent
 

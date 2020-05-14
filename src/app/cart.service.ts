@@ -4,7 +4,7 @@
 // Services share data between app parts
 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -21,20 +21,20 @@ export class CartService {
   ) {}
 
   addToCart(product) {
-    this.items.push(product)
+    this.items.push(product);
   }
 
   getItems() {
-    return this.items
+    return this.items;
   }
 
   clearCart() {
-    this.items = []
-    return this.items
+    this.items = [];
+    return this.items;
   }
 
   getShippingPrices() {
-    return this.http.get('/assets/shipping.json')
+    return this.http.get('/assets/shipping.json');
     // This function is using an HTTP GET method to retrieve data
     // See https://angular.io/guide/http for more info
   }
